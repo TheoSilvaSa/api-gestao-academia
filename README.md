@@ -81,4 +81,4 @@ As imagens abaixo confirmam que os dados criados via API foram persistidos corre
 
 **Consulta na tabela `PAGAMENTO`:**
 *A consulta mostra o pagamento registrado para o aluno de ID 2.*
-![Consulta na tabela Pagamento](https://github.com/user-attachments/assets/609c722e-e4e4-47cf-ae67-2df86779738f)
+![Consulta na tabela Pagamento](https://github.com/user-attachments/assets/06aac244-f1bc-491d-95da-cb697688ebb4)
