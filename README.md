@@ -56,6 +56,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3d85dbbe7610)
 
 ### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
+OBS na hora de criar criei com id 1 por engano mas dei comando sql de update no banco
 ![Criação de Aluno](https://github.com/user-attachments/assets/4ee6538b-83a7-45a3-a19a-57aeb9a6b6a0)
 
 ### 3. Criação de um Novo Treino (`POST /api/v1/treinos`)
@@ -74,8 +75,8 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 
 As imagens abaixo confirmam que os dados criados via API foram persistidos corretamente no banco de dados H2.
 
-**Consulta na tabela `ALUNO` e `PLANO`:**
-*A consulta mostra o aluno "Ana Carolina" associado ao `PLANO_ID` 2.*
+**Consulta na tabela `ALUNO`:**
+*A consulta exibe o aluno "Ana Carolina" e prova que a associação com o plano foi bem-sucedida ao registrar o `PLANO_ID` como 2.*
 ![Consulta na tabela Aluno](https://github.com/user-attachments/assets/8a51f321-0a03-4d48-adbb-2201b7d46348)
 
 **Consulta na tabela de Vínculo `ALUNO_TREINO_VINCULO`:**
