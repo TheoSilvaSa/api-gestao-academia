@@ -58,11 +58,14 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
 ![Criação de Aluno](https://github.com/user-attachments/assets/4ee6538b-83a7-45a3-a19a-57aeb9a6b6a0)
 
-### 3. Associação de Aluno a um Treino (`POST /api/v1/treinos/{treinoId}/alunos/{alunoId}`)
+### 3. Criação de um Novo Treino (`POST /api/v1/treinos`)
+![Criação de Treino](https://github.com/user-attachments/assets/bb616570-5096-4176-a020-a995fafb842a)
+
+### 4. Associação de Aluno a um Treino (`POST /api/v1/treinos/{treinoId}/alunos/{alunoId}`)
 ![Associação de Aluno e Treino](https://github.com/user-attachments/assets/794bdf5b-fb3e-454b-a31d-198a0aee907a)
 
-### 4. Registro de Pagamento (`POST /api/v1/alunos/{alunoId}/pagamentos`)
-![Registro de Pagamento](https://github.com/user-attachments/assets/bb616570-5096-4176-a020-a995fafb842a)
+### 5. Registro de Pagamento (`POST /api/v1/alunos/{alunoId}/pagamentos`)
+![Registro de Pagamento](https://github.com/user-attachments/assets/ad450ea3-cf4f-4245-948d-7e211d3119b0)
 
 
 ---
