@@ -59,4 +59,15 @@ public class TreinoService {
         }
         return dto;
     }
+
+    public TreinoDTO atualizarTreino(Long id, TreinoDTO treinoDTO) {
+        Treino treino = treinoRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Treino não encontrado com id: " + id));
+
+        treino.setNome(treinoDTO.getNome());
+        treino.setDescricao(treinoDTO.getDescricao());
+
+        Treino treinoAtualizado = treinoRepository.save(treino);
+        return toDTO(treinoAtualizado);
+    }
 }

@@ -33,4 +33,10 @@ public class PlanoController {
     public void deletarPlano(@PathVariable Long id) {
         planoService.deletarPlano(id);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PlanoDTO> atualizarPlano(@PathVariable Long id, @RequestBody PlanoDTO planoDTO) {
+        PlanoDTO planoAtualizado = planoService.atualizarPlano(id, planoDTO);
+        return ResponseEntity.ok(planoAtualizado);
+    }
 }

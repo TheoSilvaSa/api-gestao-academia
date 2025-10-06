@@ -39,4 +39,10 @@ public class TreinoController {
     public void associarAlunoAoTreino(@PathVariable Long treinoId, @PathVariable Long alunoId) {
         treinoService.associarAluno(treinoId, alunoId);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TreinoDTO> atualizarTreino(@PathVariable Long id, @RequestBody TreinoDTO treinoDTO) {
+        TreinoDTO treinoAtualizado = treinoService.atualizarTreino(id, treinoDTO);
+        return ResponseEntity.ok(treinoAtualizado);
+    }
 }

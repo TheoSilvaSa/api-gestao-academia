@@ -41,4 +41,15 @@ public class PlanoService {
         dto.setValor(plano.getValor());
         return dto;
     }
+
+    public PlanoDTO atualizarPlano(Long id, PlanoDTO planoDTO) {
+        Plano plano = planoRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Plano não encontrado com id: " + id));
+
+        plano.setNome(planoDTO.getNome());
+        plano.setValor(planoDTO.getValor());
+
+        Plano planoAtualizado = planoRepository.save(plano);
+        return toDTO(planoAtualizado);
+    }
 }
