@@ -61,7 +61,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3d85dbbe7610)
 
 #### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
-*Nota: O aluno foi associado ao `PLANO_ID` correto via `UPDATE` no H2 Console para fins de teste.*
+*OBS: na hora de criar, criei com id 1 por engano mas dei o comando UPDATE ALUNO SET PLANO_ID = 2 WHERE ID = 2;*
 ![Criação de Aluno](https://github.com/user-attachments/assets/4ee6538b-83a7-45a3-a19a-57aeb9a6b6a0)
 
 #### 3. Criação de um Novo Treino (`POST /api/v1/treinos`)
