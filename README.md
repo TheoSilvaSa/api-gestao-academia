@@ -40,7 +40,7 @@ O projeto foi estruturado em uma **arquitetura de camadas** (Controller, Service
     [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
     **Visão Geral dos Endpoints:**
-    ![ListaEndpoints](https://github.com/user-attachments/assets/080d8a12-5688-43c9-8143-3b5f8f7c02c3)
+    ![ListaEndpoints](https://github.com/user-attachments/assets/e60548c8-710b-4fe4-8474-564cf8402e02)
 
 * **Console do Banco de Dados H2:**
     Para visualizar os dados diretamente no banco.
