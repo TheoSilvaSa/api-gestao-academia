@@ -17,7 +17,7 @@ O projeto foi estruturado em uma **arquitetura de camadas** (Controller, Service
 ### Passos para Execução
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/TheoSilvaSa/api-gestao-academia.git](https://github.com/TheoSilvaSa/api-gestao-academia.git)
+    git clone https://github.com/TheoSilvaSa/api-gestao-academia.git
     ```
 
 2.  **Navegue até a pasta do projeto:**
