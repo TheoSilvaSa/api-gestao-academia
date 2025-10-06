@@ -58,10 +58,10 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ### Fluxo Principal de Criação de Dados
 
 #### 1. Criação de um Novo Plano (`POST /api/v1/planos`)
-![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3d85dbbe7610)
+![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3b5f8f7c02c3)
 
 #### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
-*OBS: na hora de criar, criei com id 1 por engano mas dei o comando UPDATE ALUNO SET PLANO_ID = 2 WHERE ID = 2;*
+*Nota: O aluno foi associado ao `PLANO_ID` correto via `UPDATE` no H2 Console para fins de teste.*
 ![Criação de Aluno](https://github.com/user-attachments/assets/4ee6538b-83a7-45a3-a19a-57aeb9a6b6a0)
 
 #### 3. Criação de um Novo Treino (`POST /api/v1/treinos`)
@@ -83,11 +83,19 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 *Este teste demonstra a funcionalidade de atualização, alterando o nome do aluno.*
 ![Atualização de Aluno](https://github.com/user-attachments/assets/21d97b80-b365-42fe-a56c-2fe229afea42)
 
-#### 8. Inativação de Aluno (`DELETE /api/v1/alunos/{id}`)
+#### 8. Atualização de Plano (`PUT /api/v1/planos/{id}`)
+*Este teste demonstra a atualização do nome e do valor de um plano existente.*
+![Atualização de Plano](https://github.com/user-attachments/assets/5689a9bc-1524-41c5-b980-58e5c02cb8d7)
+
+#### 9. Atualização de Treino (`PUT /api/v1/treinos/{id}`)
+*Este teste demonstra a alteração da descrição de um treino existente.*
+![Atualização de Treino](https://github.com/user-attachments/assets/3500dae2-4c66-4946-8ad7-9f12c33f3a10)
+
+#### 10. Inativação de Aluno (`DELETE /api/v1/alunos/{id}`)
 *Este teste mostra o endpoint de inativação. O resultado `204 No Content` confirma o sucesso da operação.*
 ![Inativação de Aluno](https://github.com/user-attachments/assets/a020dc6f-eff9-42cf-8239-9728e738e572)
 
-#### 9. Consulta de Pagamentos do Aluno (`GET /api/v1/alunos/{alunoId}/pagamentos`)
+#### 11. Consulta de Pagamentos do Aluno (`GET /api/v1/alunos/{alunoId}/pagamentos`)
 *Este teste lista todos os pagamentos registrados para um aluno específico.*
 ![Consulta de Pagamentos](https://github.com/user-attachments/assets/bce712e9-4a42-4e31-97a4-c3505cbb044a)
 
@@ -96,7 +104,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 
 ## 💾 Verificação no Banco de Dados (H2 Console)
 
-As imagens abaixo confirmam que os dados criados via API foram persistidos corretamente no banco de dados H2.
+As imagens abaixo confirmam que os dados criados e alterados via API foram persistidos corretamente no banco de dados H2.
 
 **Consulta na tabela `ALUNO` (após criação):**
 *A consulta exibe o aluno "Ana Carolina" e prova que a associação com o plano foi bem-sucedida ao registrar o `PLANO_ID` como 2.*
@@ -116,3 +124,17 @@ As imagens abaixo confirmam que os dados criados via API foram persistidos corre
 SELECT * FROM ALUNO WHERE ID = 2;
 ```
 ![Verificação do Update do Aluno](https://github.com/user-attachments/assets/5336df23-1942-4e41-b939-4cd510dab3d4)
+
+**Verificação da Atualização (PUT) na Tabela `PLANO`:**
+*Esta consulta confirma que o nome e o valor do plano foram alterados com sucesso.*
+```sql
+SELECT * FROM PLANO WHERE ID = [ID_DO_PLANO_ATUALIZADO];
+```
+![Verificação do Update do Plano](https://github.com/user-attachments/assets/d74ea3ef-4918-49e9-b760-9274448216cc)
+
+**Verificação da Atualização (PUT) na Tabela `TREINO`:**
+*Esta consulta confirma que o nome e a descrição do treino foram alterados com sucesso.*
+```sql
+SELECT * FROM TREINO WHERE ID = [ID_DO_TREINO_ATUALIZADO];
+```
+![Verificação do Update do Treino](https://github.com/user-attachments/assets/51ba23a1-ebbc-4b50-95f1-f5cb8adf445d)
