@@ -58,7 +58,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ### Fluxo Principal de Criação de Dados
 
 #### 1. Criação de um Novo Plano (`POST /api/v1/planos`)
-![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3b5f8f7c02c3)
+![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3d85dbbe7610)
 
 #### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
 *Nota: O aluno foi associado ao `PLANO_ID` correto via `UPDATE` no H2 Console para fins de teste.*
