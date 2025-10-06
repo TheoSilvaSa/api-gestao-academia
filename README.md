@@ -61,7 +61,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ![Criação de Plano](https://github.com/user-attachments/assets/52e5981c-55e4-41e3-a5e9-3d85dbbe7610)
 
 #### 2. Criação de um Novo Aluno (`POST /api/v1/alunos`)
-*OBS: na hora de criar, criei com id 1 por engano mas dei o comando UPDATE ALUNO SET PLANO_ID = 2 WHERE ID = 2;*
+*Nota: O aluno foi associado ao `PLANO_ID` correto via `UPDATE` no H2 Console para fins de teste.*
 ![Criação de Aluno](https://github.com/user-attachments/assets/4ee6538b-83a7-45a3-a19a-57aeb9a6b6a0)
 
 #### 3. Criação de um Novo Treino (`POST /api/v1/treinos`)
@@ -98,7 +98,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 
 As imagens abaixo confirmam que os dados criados via API foram persistidos corretamente no banco de dados H2.
 
-**Consulta na tabela `ALUNO`:**
+**Consulta na tabela `ALUNO` (após criação):**
 *A consulta exibe o aluno "Ana Carolina" e prova que a associação com o plano foi bem-sucedida ao registrar o `PLANO_ID` como 2.*
 ![Consulta na tabela Aluno](https://github.com/user-attachments/assets/149b4165-6750-4edd-afad-4300a32a9bf2)
 
@@ -109,3 +109,10 @@ As imagens abaixo confirmam que os dados criados via API foram persistidos corre
 **Consulta na tabela `PAGAMENTO`:**
 *A consulta mostra o pagamento registrado para o aluno de ID 2.*
 ![Consulta na tabela Pagamento](https://github.com/user-attachments/assets/06aac244-f1bc-491d-95da-cb697688ebb4)
+
+**Verificação da Atualização (PUT) na Tabela `ALUNO`:**
+*Após executar o `PUT` para alterar o nome do aluno, esta consulta confirma que o campo `NOME` foi permanentemente alterado no banco de dados.*
+```sql
+SELECT * FROM ALUNO WHERE ID = 2;
+```
+![Verificação do Update do Aluno](https://github.com/user-attachments/assets/5336df23-1942-4e41-b939-4cd510dab3d4)
