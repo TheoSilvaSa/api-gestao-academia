@@ -33,4 +33,10 @@ public class AlunoController {
     public void inativarAluno(@PathVariable Long id) {
         alunoService.inativarAluno(id);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<AlunoDTO> atualizarAluno(@PathVariable Long id, @RequestBody AlunoDTO alunoDTO) {
+        AlunoDTO alunoAtualizado = alunoService.atualizarAluno(id, alunoDTO);
+        return ResponseEntity.ok(alunoAtualizado);
+    }
 }

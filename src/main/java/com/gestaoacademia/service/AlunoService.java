@@ -64,4 +64,20 @@ public class AlunoService {
         }
         return dto;
     }
+
+    public AlunoDTO atualizarAluno(Long id, AlunoDTO alunoDTO) {
+        Aluno aluno = alunoRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Aluno não encontrado com id: " + id));
+
+        aluno.setNome(alunoDTO.getNome());
+        aluno.setDataNascimento(alunoDTO.getDataNascimento());
+
+        if (alunoDTO.getPlanoId() != null) {
+            aluno.setPlano(planoRepository.findById(alunoDTO.getPlanoId())
+                    .orElseThrow(() -> new EntityNotFoundException("Plano não encontrado com id: " + alunoDTO.getPlanoId())));
+        }
+
+        Aluno alunoAtualizado = alunoRepository.save(aluno);
+        return toDTO(alunoAtualizado);
+    }
 }
