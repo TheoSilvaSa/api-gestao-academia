@@ -15,37 +15,39 @@ O projeto foi estruturado em uma **arquitetura de camadas** (Controller, Service
 * Apache Maven
 
 ### Passos para Execução
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/TheoSilvaSa/api-gestao-academia.git](https://github.com/TheoSilvaSa/api-gestao-academia.git)
-    ```
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/TheoSilvaSa/api-gestao-academia.git](https://github.com/TheoSilvaSa/api-gestao-academia.git)
+    ```
 
-2.  **Navegue até a pasta do projeto:**
-    ```bash
-    cd api-gestao-academia
-    ```
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd api-gestao-academia
+    ```
 
-3.  **Execute a aplicação com o Maven:**
-    ```bash
-    mvn spring-boot:run
-    ```
-A aplicação estará rodando em `http://localhost:8080`.
+3.  **Execute a aplicação com o Maven:**
+    ```bash
+    mvn spring-boot:run
+    ```
+    A aplicação estará rodando em `http://localhost:8080`.
 
 ---
 
 ## ⚙️ Acessando os Recursos da API
 
 * **Documentação Interativa (Swagger UI):**
-    Para testar todos os endpoints de forma visual.
-    [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+    Para testar todos os endpoints de forma visual.
+    [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+    **Visão Geral dos Endpoints:**
     ![ListaEndpoints](https://github.com/user-attachments/assets/080d8a12-5688-43c9-8143-3b5f8f7c02c3)
 
 * **Console do Banco de Dados H2:**
-    Para visualizar os dados diretamente no banco.
-    [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
-    * **JDBC URL:** `jdbc:h2:file:./gestao_academia_db`
-    * **User Name:** `sa`
-    * **Password:** `password`
+    Para visualizar os dados diretamente no banco.
+    [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+    * **JDBC URL:** `jdbc:h2:file:./gestao_academia_db`
+    * **User Name:** `sa`
+    * **Password:** `password`
 
 ---
 
@@ -74,7 +76,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ### Testes Adicionais (GET, PUT, DELETE)
 
 #### 6. Consulta de Alunos (`GET /api/v1/alunos`)
-*Este teste mostra a lista de alunos cadastrados, confirmando que a "Ana Carolina" foi criada e seu status inicial é "ativo": true.*
+*Este teste mostra a lista de alunos cadastrados, confirmando que a "Ana Carolina" foi criada e seu status inicial é `"ativo": true`.*
 ![Consulta de Alunos](https://github.com/user-attachments/assets/fd3dce7a-39d3-4705-9298-8126e3671023)
 
 #### 7. Atualização de Aluno (`PUT /api/v1/alunos/{id}`)
@@ -82,7 +84,7 @@ Abaixo estão os exemplos de testes realizados nos principais endpoints da aplic
 ![Atualização de Aluno](https://github.com/user-attachments/assets/21d97b80-b365-42fe-a56c-2fe229afea42)
 
 #### 8. Inativação de Aluno (`DELETE /api/v1/alunos/{id}`)
-*Este teste mostra o endpoint de inativação. Após executá-lo, uma nova consulta `GET /api/v1/alunos` mostraria o status do aluno como "ativo": false.*
+*Este teste mostra o endpoint de inativação. O resultado `204 No Content` confirma o sucesso da operação.*
 ![Inativação de Aluno](https://github.com/user-attachments/assets/a020dc6f-eff9-42cf-8239-9728e738e572)
 
 #### 9. Consulta de Pagamentos do Aluno (`GET /api/v1/alunos/{alunoId}/pagamentos`)
